@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dockerspringbootexample
+  name: dockerspringbootexample
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: dockerspringbootexample
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dockerspringbootexample
+    spec:
+      containers:
+      - image: dockerspringbootexample-server
+        name: dockerspringbootexample-server
+        resources: {}
+        ports:
+          - containerPort: 3000
+status: {}
